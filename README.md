@@ -11,3 +11,5 @@ npm install express ejs express-validator
 Create folders: routes, views, controllers, storages
 
 Set up server in app.js
+
+Write the code to set the view folder, ejs engine and public folder
