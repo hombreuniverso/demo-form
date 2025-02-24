@@ -24,4 +24,6 @@ At this point form is working - one can create new users and see them displayed 
 
 Add validation and sanitization of form
 
+Use try-catch block in usersController.js in the function "usersCreatePost" to assist in error handling in order to log error
+
 
