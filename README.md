@@ -13,3 +13,15 @@ Create folders: routes, views, controllers, storages
 Set up server in app.js
 
 Write the code to set the view folder, ejs engine and public folder
+
+Write code for usersRouter 
+
+Update index code to show list of users created 
+
+Create a form to make users
+
+At this point form is working - one can create new users and see them displayed on the index page
+
+Add validation and sanitization of form
+
+

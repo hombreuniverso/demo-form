@@ -1,8 +1,18 @@
+<!--views/index.ejs - will list all users created-->
+
 <!DOCTYPE html>
 <html lang="en">
   <!--EJS Header-->
-  <%- include("./partials/header")%>
+  <%- include("./partials/header.ejs")%>
   <body>
-    <h1>Testing</h1>
+    <h1><%=title%></h1>
+   <ul>
+      <%if(users){%>
+         <%users.forEach(user =>{%>
+      <li>ID: <%=user.id%>, Name: <%=user.firstName%> <%=user.lastName%></li>
+      <%});%> <%}%>
+    </ul>
+  
+    <a href="/create">Create a User</a>
   </body>
 </html>
