@@ -10,7 +10,7 @@ exports.usersListGet = (req, res) => {
 };
 
 exports.usersCreateGet = (req, res) => {
-  res.render("createUserForm", { title: "Create User", errors: [] },);
+  res.render("createUserForm", { title: "Create User", errors: [] });
 };
 /*
 exports.usersCreatePost = (req, res) => {
@@ -47,22 +47,67 @@ exports.usersCreatePost = [
   (req, res) => {
     //Improve error handling by using try-catch blocks
     try {
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.status(400).render("createUserForm", {
+          title: "Create User",
+          errors: errors.array(),
+        });
+      }
+      const { firstName, lastName } = req.body;
+      usersStorage.addUser({ firstName, lastName });
+      res.redirect("/");
+    } catch (error) {
+      console.log(error);
+      res.status(500).render("error", {
+        title: "Error",
+        message: "An error occurred while creating the user.",
+      });
+    }
+  },
+];
+
+exports.usersUpdateGet = (req, res) => {
+  const user = usersStorage.getUser(req.params.id);
+  res.render("updateUserForm", { title: "Update User", user, errors: [] });
+};
+
+exports.usersUpdatePost = [
+  validateUser,
+(req, res) => {
+  try {
+    const user = usersStorage.getUser(req.params.id);
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).render("createUserForm", {
-        title: "Create User",
+      return res.status(400).render("updateUserForm", {
+        title: "Update User",
+        user: user,
         errors: errors.array(),
       });
     }
     const { firstName, lastName } = req.body;
-    usersStorage.addUser({ firstName, lastName });
+    usersStorage.updateUser(req.params.id, { firstName, lastName });
     res.redirect("/");
-  }catch (error) {
+  } catch (error) {
     console.log(error);
     res.status(500).render("error", {
       title: "Error",
-      message: "An error occurred while creating the user.",
+      message: "An error occurred while updating the user.",
     });
   }
-  },
+}
 ];
+
+//Delete a matching user. Otherwise, respond with an error
+exports.usersDeletePost = (req, res) => {
+  try {
+    usersStorage.deleteUser(req.params.id);
+    res.redirect("/");    
+  } catch (error) {
+    console.log(error);
+    res.status(500).render("error", {
+      title: "Error",
+      message: "An error occurred while deleting the user.",
+    });
+  }
+}

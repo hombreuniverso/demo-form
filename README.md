@@ -26,4 +26,16 @@ Add validation and sanitization of form
 
 Use try-catch block in usersController.js in the function "usersCreatePost" to assist in error handling in order to log error
 
+Create update button/ link in index.ejs
+
+Make routes for updating users
+
+Add logic in controller for request to update users
+
+Create delete button in index.ejs
+
+Add logic in controller for deleting users
+
+Make route for deleting user
+
 

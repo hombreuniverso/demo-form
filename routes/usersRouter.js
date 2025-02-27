@@ -17,7 +17,6 @@ const usersRouter = Router();
 //Import users controller
 const usersController = require("../controllers/usersController");
 
-
 //Set up routes
 //Index route
 usersRouter.get("/", usersController.usersListGet);
@@ -26,5 +25,12 @@ usersRouter.get("/create", usersController.usersCreateGet);
 //Post route
 usersRouter.post("/create", usersController.usersCreatePost);
 
+//Update route
+usersRouter.get("/:id/update", usersController.usersUpdateGet);
+//Post route
+usersRouter.post("/:id/update", usersController.usersUpdatePost);
+
+//Delete route
+usersRouter.post("/:id/delete", usersController.usersDeletePost);
 //Export users router
 module.exports = usersRouter;

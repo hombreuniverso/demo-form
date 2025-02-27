@@ -1,0 +1,31 @@
+<!--Update User Form-->
+<!--views/updateUserForm.ejs-->
+<!DOCTYPE html>
+<html lang="en">
+  <!--EJS Header-->
+  <%- include("./partials/header.ejs")%>
+
+  <body>
+    <h1><%=title%></h1>
+
+    <!--Code for errors-->
+    <%- include("./partials/errors.ejs")%>
+
+     <!--Code for form-->
+    <form
+      action="/<%=user.id%>/update"
+      method="post"
+      enctype="application/x-www-form-urlencoded"
+    >
+      <input
+        type="text"
+        name="firstName"
+        value="<%=user.firstName%>"
+        required
+      />
+      <input type="text" name="lastName" value="<%=user.lastName%>" required />
+      <button type="submit">Update User</button>
+      <a href="/">Back to home</a>
+    </form>
+  </body>
+</html>
