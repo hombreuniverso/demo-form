@@ -8,15 +8,21 @@
 
     <!--Code for errors-->
 
-   <%- include("./partials/errors.ejs")%>
+    <%- include("./partials/errors.ejs")%>
 
-    <form action="/create" method="post" enctype="application/x-www-form-urlencoded">
+    <form class="create-user-form" action="/create" method="post">
       <label for="firstName">First Name</label>
       <input type="text" name="firstName" id="firstName" required />
       <label for="lastName">Last Name</label>
-      <input type="text" name="lastName" id="lastName" required/>
+      <input type="text" name="lastName" id="lastName" required />
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required />
+      <label for="age">Age</label>
+      <input type="number" name="age" id="age" />
+      <label for="bio">Bio</label>
+      <textarea type="text" name="bio" id="bio" ></textarea>
       <button type="submit">Submit</button>
     </form>
-    <a><a href="/">Back to home</a>
+    <a href="/">Back to home</a>
   </body>
 </html>

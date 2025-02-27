@@ -1,3 +1,158 @@
-body{
-    background-color: aqua;
+body {
+  background-color: aqua;
+  font-family: Arial, sans-serif;
 }
+
+ .create-user-form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"], input[type="email"], input[type="number"] {
+  width: calc(100% - 40px);
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px 10px 20px 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+  width: calc(100% - 40px);
+  height: 100px;
+  margin-bottom: 20px;
+  padding: 10px 10px 20px 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+textarea:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.create-user-form button[type="submit"] {
+  width: calc(100% - 5px);
+  height: 40px;
+  margin: 0 20px 20px 0px;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.create-user-form button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.create-user-form button[type="submit"]:active {
+  background-color: #3e8e41;
+  transform: translateY(2px);
+}
+
+a {
+  text-decoration: none;
+  color: #4CAF50;
+}
+
+a:hover {
+  color: #3e8e41;
+}
+
+/* Media Queries */
+
+/* Small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .create-user-form {
+    max-width: 300px;
+    margin: 20px auto;
+    padding: 15px;
+  }
+  .create-user-form input[type="text"], .create-user-form input[type="email"], .create-user-form input[type="number"] {
+    width: calc(100% - 20px);
+    height: 35px;
+    margin: 0 10px 15px 10px;
+  }
+  .create-user-form textarea {
+    width: calc(100% - 20px);
+    height: 80px;
+    margin: 0 10px 15px 10px;
+  }
+  .create-user-form button[type="submit"] {
+    width: calc(100% - 20px);
+    height: 35px;
+    margin: 0 10px 15px 10px;
+  }
+
+  
+/* Medium devices (tablets, 601px and up) */
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  .create-user-form {
+    max-width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+  }
+  .create-user-form input[type="text"], .create-user-form input[type="email"], .create-user-form input[type="number"] {
+    width: calc(100% - 30px);
+    height: 40px;
+    margin: 0 15px 20px 15px;
+  }
+  .create-user-form textarea {
+    width: calc(100% - 30px);
+    height: 100px;
+    margin: 0 15px 20px 15px;
+  }
+  .create-user-form button[type="submit"] {
+    width: calc(100% - 30px);
+    height: 40px;
+    margin: 0 15px 20px 15px;
+  }
+}
+
+/* Large devices (desktops, 993px and up) */
+@media only screen and (min-width: 993px) {
+  .create-user-form {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 25px;
+  }
+  .create-user-form input[type="text"], .create-user-form input[type="email"], .create-user-form input[type="number"] {
+    width: calc(100% - 40px);
+    height: 45px;
+    margin: 0 20px 25px 20px;
+  }
+  .create-user-form textarea {
+    width: calc(100% - 40px);
+    height: 120px;
+    margin: 0 20px 25px 20px;
+  }
+  .create-user-form button[type="submit"] {
+    width: calc(100% - 40px);
+    height: 45px;
+    margin: 0 20px 25px 20px;
+  }
+}
+}
+
