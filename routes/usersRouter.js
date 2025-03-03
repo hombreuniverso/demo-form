@@ -30,6 +30,9 @@ usersRouter.get("/:id/update", usersController.usersUpdateGet);
 //Post route
 usersRouter.post("/:id/update", usersController.usersUpdatePost);
 
+//Search route
+usersRouter.get("/search", usersController.usersSearchGet);
+
 //Delete route
 usersRouter.post("/:id/delete", usersController.usersDeletePost);
 //Export users router

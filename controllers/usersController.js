@@ -118,6 +118,10 @@ exports.usersUpdatePost = [
   },
 ];
 
+exports.usersSearchGet = (req, res) => {
+  res.render("searchForm", { title: "Search User", errors: [] });
+};
+
 //Delete a matching user. Otherwise, respond with an error
 exports.usersDeletePost = (req, res) => {
   try {

@@ -49,4 +49,8 @@ The data between the html tags <textarea> </textarea> is considered its value.
 The problem was solved by placing the code between the html textarea tags:
 <textarea ...><%=user.bio%></textarea>
 
+Create search form, search results view, 
+a search route (/search) and logic for search in controller
+
+
 
