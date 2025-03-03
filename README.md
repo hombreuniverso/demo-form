@@ -40,4 +40,13 @@ Make route for deleting user
 
 Extend app to include email, age and bio in create and update forms and controller
 
+Solve problem with textarea data not showing up in update form
+
+This problem occurred because textarea does not have a value property like input
+
+The data between the html tags <textarea> </textarea> is considered its value.
+
+The problem was solved by placing the code between the html textarea tags:
+<textarea ...><%=user.bio%></textarea>
+
 
