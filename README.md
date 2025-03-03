@@ -38,4 +38,6 @@ Add logic in controller for deleting users
 
 Make route for deleting user
 
+Extend app to include email, age and bio in create and update forms and controller
+
 

@@ -24,7 +24,9 @@ exports.usersCreatePost = (req, res) => {
 const { body, validationResult } = require("express-validator");
 
 const alphaErr = "Must only contain letters.";
-const lengthErr = "Must be between 1 and 10 characters.";
+const nameLengthErr = "Must be between 1 and 10 characters.";
+const emailErr = "Must be a valid email address.";
+const bioLengthErr = "Must be between 1 and 200 characters.";
 
 const validateUser = [
   body("firstName")
@@ -32,13 +34,25 @@ const validateUser = [
     .isAlpha()
     .withMessage(`First name ${alphaErr}`)
     .isLength({ min: 1, max: 10 })
-    .withMessage(`First name ${lengthErr}`),
+    .withMessage(`First name ${nameLengthErr}`),
   body("lastName")
     .trim()
     .isAlpha()
     .withMessage(`Last name ${alphaErr}`)
     .isLength({ min: 1, max: 10 })
-    .withMessage(`Last name ${lengthErr}`),
+    .withMessage(`Last name ${nameLengthErr}`),
+  body("email")
+    .trim()
+    .isEmail()
+    .withMessage("Must be a valid email address.")
+    .withMessage(`Email ${emailErr}`),
+  body("age")
+    .trim()
+    .isNumeric()
+    .withMessage("Must be a number.")
+    .isInt({ min: 18, max: 120 })
+    .withMessage("Must be between 18 and 120."),
+  body("bio").isLength({ min: 1, max: 200 }).withMessage(`Bio ${bioLengthErr}`),
 ];
 
 //Array of midlleware validations to controller
@@ -54,8 +68,8 @@ exports.usersCreatePost = [
           errors: errors.array(),
         });
       }
-      const { firstName, lastName } = req.body;
-      usersStorage.addUser({ firstName, lastName });
+      const { firstName, lastName, email, age, bio } = req.body;
+      usersStorage.addUser({ firstName, lastName, email, age, bio });
       res.redirect("/");
     } catch (error) {
       console.log(error);
@@ -74,35 +88,41 @@ exports.usersUpdateGet = (req, res) => {
 
 exports.usersUpdatePost = [
   validateUser,
-(req, res) => {
-  try {
-    const user = usersStorage.getUser(req.params.id);
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).render("updateUserForm", {
-        title: "Update User",
-        user: user,
-        errors: errors.array(),
+  (req, res) => {
+    try {
+      const user = usersStorage.getUser(req.params.id);
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.status(400).render("updateUserForm", {
+          title: "Update User",
+          user: user,
+          errors: errors.array(),
+        });
+      }
+      const { firstName, lastName, email, age, bio } = req.body;
+      usersStorage.updateUser(req.params.id, {
+        firstName,
+        lastName,
+        email,
+        age,
+        bio,
+      });
+      res.redirect("/");
+    } catch (error) {
+      console.log(error);
+      res.status(500).render("error", {
+        title: "Error",
+        message: "An error occurred while updating the user.",
       });
     }
-    const { firstName, lastName } = req.body;
-    usersStorage.updateUser(req.params.id, { firstName, lastName });
-    res.redirect("/");
-  } catch (error) {
-    console.log(error);
-    res.status(500).render("error", {
-      title: "Error",
-      message: "An error occurred while updating the user.",
-    });
-  }
-}
+  },
 ];
 
 //Delete a matching user. Otherwise, respond with an error
 exports.usersDeletePost = (req, res) => {
   try {
     usersStorage.deleteUser(req.params.id);
-    res.redirect("/");    
+    res.redirect("/");
   } catch (error) {
     console.log(error);
     res.status(500).render("error", {
@@ -110,4 +130,4 @@ exports.usersDeletePost = (req, res) => {
       message: "An error occurred while deleting the user.",
     });
   }
-}
+};
