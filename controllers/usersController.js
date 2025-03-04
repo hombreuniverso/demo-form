@@ -118,8 +118,38 @@ exports.usersUpdatePost = [
   },
 ];
 
-exports.usersSearchGet = (req, res) => {
+//Bring up search form
+exports.getSearchForm = (req, res) => {
   res.render("searchForm", { title: "Search User", errors: [] });
+};
+
+exports.usersSearchGet = (req, res) => {
+  let usersFound = [];
+  let message = "";
+  console.log(usersStorage.getUsers().length);
+  for (let i = 0; i < usersStorage.getUsers().length; i++) {
+    if (
+      usersStorage.getUsers()[i].firstName == req.query.firstName ||
+      usersStorage.getUsers()[i].lastName == req.query.lastName ||
+      usersStorage.getUsers()[i].email == req.query.email
+    ) {
+      usersFound.push(usersStorage.getUsers()[i]);
+    }
+  }
+
+  if (usersFound.length == 0) {
+    res.status(404).render("searchResults", {
+      title: "Search Result",
+      usersFound,
+      errors: ["No users found."],
+    });
+  } else {
+    res.render("searchResults", {
+      title: "Search Result",
+      usersFound,
+      errors: [],
+    });
+  }
 };
 
 //Delete a matching user. Otherwise, respond with an error

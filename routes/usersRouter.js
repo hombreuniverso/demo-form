@@ -31,6 +31,7 @@ usersRouter.get("/:id/update", usersController.usersUpdateGet);
 usersRouter.post("/:id/update", usersController.usersUpdatePost);
 
 //Search route
+usersRouter.get("/getSearchForm", usersController.getSearchForm);
 usersRouter.get("/search", usersController.usersSearchGet);
 
 //Delete route

@@ -1,9 +1,6 @@
 <!--views/partials/errors.ejs-->
 
-<% if(typeof errors !== "undefined" && errors){%>
-    <ul>
-        <% errors.forEach(function(error) { %>
-            <li><%= error.msg %></li>
-        <% }); %>
-    </ul>
-<%}%>
+<% if(typeof errors !== "undefined" && errors){%> <%
+errors.forEach(function(error) { %>
+<p><%= error.msg %></p>
+<% }); %> <%}%>

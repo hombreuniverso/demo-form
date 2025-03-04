@@ -9,6 +9,19 @@
     <h1><%=title%></h1>
 
     <!--Code for errors-->
-    <%- include("./partials/errors.ejs")%>
+    <%- include("./partials/errors.ejs")%> 
+    
+    <%if (usersFound.length == 0){%>    
+      <p><%= errors%></p>
+    <%}else
+    {%> <%usersFound.forEach(user =>
+      {%> <%= user.id %>: Name: <%=
+    user.firstName %> <%= user.lastName %><br />
+    Email: <%= user.email %><br />
+    Biography: <%= user.bio %>
+    <br />
+    <%})%> <%}%>
 
+    <a href="/">Back to home</a>
+  </body>
 </html>
