@@ -11,23 +11,25 @@
     <!--Code for errors-->
     <%- include("./partials/errors.ejs")%>
 
-    <!--Code for form-->
-    <form
-      action="/search"
-      method="get"
-      enctype="application/x-www-form-urlencoded"
-    >
-      <label for="firstName">First Name</label>
-      <input type="text" name="firstName"/>
+    <!-- Search User Form -->
+    <div class="search-user-form">
+      <form
+        action="/search"
+        method="get"
+        enctype="application/x-www-form-urlencoded"
+      >
+        <label for="firstName">First Name</label>
+        <input type="text" name="firstName" />
 
-      <label for="lastName">Last Name</label>
-      <input type="text" name="lastName" />
+        <label for="lastName">Last Name</label>
+        <input type="text" name="lastName" />
 
-      <label for="email">Email</label>
-      <input type="email" name="email" />
+        <label for="email">Email</label>
+        <input type="email" name="email" />
 
-      <button type="submit">Search</button>
-      <a href="/">Back to home</a>
-    </form>
+        <button type="submit">Search</button>
+        <a href="/">Back to home</a>
+      </form>
+    </div>
   </body>
 </html>

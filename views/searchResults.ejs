@@ -11,17 +11,24 @@
     <!--Code for errors-->
     <%- include("./partials/errors.ejs")%> 
     
-    <%if (usersFound.length == 0){%>    
-      <p><%= errors%></p>
-    <%}else
-    {%> <%usersFound.forEach(user =>
-      {%> <%= user.id %>: Name: <%=
-    user.firstName %> <%= user.lastName %><br />
-    Email: <%= user.email %><br />
-    Biography: <%= user.bio %>
-    <br />
-    <%})%> <%}%>
-
+   <!-- Search Results -->
+   <div class="search-results-container">
+        
+     <%if (usersFound.length == 0){%>    
+       <p><%= errors%></p>
+     <%}else
+     {%> 
+       <ul class="search-results-list">
+         <%usersFound.forEach(user =>{%>
+           <li class="search-result-item">
+             <%= user.id %>: Name: <%= user.firstName %> <%= user.lastName %><br />
+             Email: <%= user.email %><br />
+             Biography: <%= user.bio %>
+           </li>
+         <%})%>
+       </ul>
+     <%}%>
+   </div>
     <a href="/">Back to home</a>
   </body>
 </html>

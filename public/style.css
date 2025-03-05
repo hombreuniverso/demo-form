@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
 }
 
- .create-user-form {
+.create-user-form {
   max-width: 400px;
   margin: 40px auto;
   padding: 20px;
@@ -19,7 +19,9 @@ label {
   color: #333;
 }
 
-input[type="text"], input[type="email"], input[type="number"] {
+input[type="text"],
+input[type="email"],
+input[type="number"] {
   width: calc(100% - 40px);
   height: 40px;
   margin-bottom: 20px;
@@ -29,7 +31,9 @@ input[type="text"], input[type="email"], input[type="number"] {
   font-size: 16px;
 }
 
-input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus {
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus {
   border-color: #aaa;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
@@ -54,7 +58,7 @@ textarea:focus {
   width: calc(100% - 5px);
   height: 40px;
   margin: 0 20px 20px 0px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: #fff;
   padding: 10px;
   border: none;
@@ -74,23 +78,139 @@ textarea:focus {
 
 a {
   text-decoration: none;
-  color: #4CAF50;
+  color: #4caf50;
 }
 
 a:hover {
   color: #3e8e41;
 }
 
+/* Search Results Container */
+.search-results-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Results List */
+.search-results-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Search Result Item */
+.search-result-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+/* Search Result Item Contents */
+.search-result-item span {
+  font-weight: bold;
+}
+
+.search-result-item p {
+  margin-bottom: 10px;
+}
+
+/* Search User Form */
+.search-user-form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-user-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.search-user-form input[type="text"],
+.search-user-form input[type="email"] {
+  width: calc(100% - 40px);
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px 10px 20px 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.search-user-form button[type="submit"] {
+  width: calc(100% - 5px);
+  height: 40px;
+  margin: 0 20px 20px 0px;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* User List Container (Index)*/
+.user-list-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-list-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.user-list-container li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.user-list-container li:last-child {
+  border-bottom: none;
+}
+
+.user-list-container a {
+  text-decoration: none;
+  color: #4caf50;
+}
+
+.user-list-container a:hover {
+  color: #3e8e41;
+}
+
+
+
+/*
 /* Media Queries */
 
-/* Small devices (phones, 600px and down) */
+/* Small devices (phones, 600px and down) 
 @media only screen and (max-width: 600px) {
   .create-user-form {
     max-width: 300px;
     margin: 20px auto;
     padding: 15px;
   }
-  .create-user-form input[type="text"], .create-user-form input[type="email"], .create-user-form input[type="number"] {
+  .create-user-form input[type="text"],
+  .create-user-form input[type="email"],
+  .create-user-form input[type="number"] {
     width: calc(100% - 20px);
     height: 35px;
     margin: 0 10px 15px 10px;
@@ -105,54 +225,60 @@ a:hover {
     height: 35px;
     margin: 0 10px 15px 10px;
   }
+    */
 
+  /* Medium devices (tablets, 601px and up) 
+  @media only screen and (min-width: 601px) and (max-width: 992px) {
+    .create-user-form {
+      max-width: 400px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+    .create-user-form input[type="text"],
+    .create-user-form input[type="email"],
+    .create-user-form input[type="number"] {
+      width: calc(100% - 30px);
+      height: 40px;
+      margin: 0 15px 20px 15px;
+    }
+    .create-user-form textarea {
+      width: calc(100% - 30px);
+      height: 100px;
+      margin: 0 15px 20px 15px;
+    }
+    .create-user-form button[type="submit"] {
+      width: calc(100% - 30px);
+      height: 40px;
+      margin: 0 15px 20px 15px;
+    }
+  }
+  */
+
+  /* Large devices (desktops, 993px and up) 
+  @media only screen and (min-width: 993px) {
+    .create-user-form {
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 25px;
+    }
+    .create-user-form input[type="text"],
+    .create-user-form input[type="email"],
+    .create-user-form input[type="number"] {
+      width: calc(100% - 40px);
+      height: 45px;
+      margin: 0 20px 25px 20px;
+    }
+    .create-user-form textarea {
+      width: calc(100% - 40px);
+      height: 120px;
+      margin: 0 20px 25px 20px;
+    }
+    .create-user-form button[type="submit"] {
+      width: calc(100% - 40px);
+      height: 45px;
+      margin: 0 20px 25px 20px;
+    }
+  }
   
-/* Medium devices (tablets, 601px and up) */
-@media only screen and (min-width: 601px) and (max-width: 992px) {
-  .create-user-form {
-    max-width: 400px;
-    margin: 30px auto;
-    padding: 20px;
-  }
-  .create-user-form input[type="text"], .create-user-form input[type="email"], .create-user-form input[type="number"] {
-    width: calc(100% - 30px);
-    height: 40px;
-    margin: 0 15px 20px 15px;
-  }
-  .create-user-form textarea {
-    width: calc(100% - 30px);
-    height: 100px;
-    margin: 0 15px 20px 15px;
-  }
-  .create-user-form button[type="submit"] {
-    width: calc(100% - 30px);
-    height: 40px;
-    margin: 0 15px 20px 15px;
-  }
 }
-
-/* Large devices (desktops, 993px and up) */
-@media only screen and (min-width: 993px) {
-  .create-user-form {
-    max-width: 500px;
-    margin: 40px auto;
-    padding: 25px;
-  }
-  .create-user-form input[type="text"], .create-user-form input[type="email"], .create-user-form input[type="number"] {
-    width: calc(100% - 40px);
-    height: 45px;
-    margin: 0 20px 25px 20px;
-  }
-  .create-user-form textarea {
-    width: calc(100% - 40px);
-    height: 120px;
-    margin: 0 20px 25px 20px;
-  }
-  .create-user-form button[type="submit"] {
-    width: calc(100% - 40px);
-    height: 45px;
-    margin: 0 20px 25px 20px;
-  }
-}
-}
-
+*/

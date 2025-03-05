@@ -3,4 +3,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title><%= title%></title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Update User Form */
+    .update-user-form {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      max-width: 400px;
+      margin: 40px auto;
+    }
+
+    .update-user-form label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .update-user-form input[type="text"],
+    .update-user-form input[type="email"],
+    .update-user-form input[type="number"] {
+      width: calc(100% - 40px);
+      height: 40px;
+      margin-bottom: 20px;
+      padding: 10px 10px 20px 25px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .update-user-form textarea {
+      width: calc(100% - 40px);
+      height: 100px;
+      margin-bottom: 20px;
+      padding: 10px 10px 20px 25px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .update-user-form button[type="submit"] {
+      width: calc(100% - 5px);
+      height: 40px;
+      margin: 0 20px 20px 0px;
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
 </head>
