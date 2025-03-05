@@ -126,7 +126,7 @@ exports.getSearchForm = (req, res) => {
 exports.usersSearchGet = (req, res) => {
   let usersFound = [];
   let message = "";
-  console.log(usersStorage.getUsers().length);
+  
   for (let i = 0; i < usersStorage.getUsers().length; i++) {
     if (
       usersStorage.getUsers()[i].firstName == req.query.firstName ||
@@ -136,14 +136,16 @@ exports.usersSearchGet = (req, res) => {
       usersFound.push(usersStorage.getUsers()[i]);
     }
   }
-
+//No users found
   if (usersFound.length == 0) {
     res.status(404).render("searchResults", {
       title: "Search Result",
       usersFound,
       errors: ["No users found."],
     });
-  } else {
+  }
+//Users found 
+  else {
     res.render("searchResults", {
       title: "Search Result",
       usersFound,
