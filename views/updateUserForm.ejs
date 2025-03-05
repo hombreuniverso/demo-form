@@ -11,33 +11,41 @@
     <!--Code for errors-->
     <%- include("./partials/errors.ejs")%>
 
-
     <!-- Update User Form -->
-    <div class="update-user-form">
-      <form
-        action="/<%=user.id%>/update"
-        method="post"
-        enctype="application/x-www-form-urlencoded"
-      >
-        <label for="firstName">First Name</label>
-        <input type="text" name="firstName" value="<%=user.firstName%>" />
+    <div class="container">
+      <div class="update-user-form">
+        <form action="/<%=user.id%>/update" method="post">
+          <label for="firstName">First Name</label>
+          <input type="text" name="firstName" value="<%=user.firstName%>" />
 
-        <label for="lastName">Last Name</label>
-        <input type="text" name="lastName" value="<%=user.lastName%>" />
+          <label for="lastName">Last Name</label>
+          <input type="text" name="lastName" value="<%=user.lastName%>" />
 
-        <label for="email">Email</label>
-        <input type="email" name="email" value="<%=user.email%>" />
+          <label for="email">Email</label>
+          <input type="email" name="email" value="<%=user.email%>" />
 
-        <label for="age">Age</label>
-        <input type="number" name="age" value="<%=user.age%>" />
+          <label for="age">Age</label>
+          <input type="number" name="age" value="<%=user.age%>" />
 
-        <label for="bio">Biography</label>
-        <textarea name="bio"><%=user.bio%></textarea>
+          <label for="bio">Biography</label>
+          <textarea name="bio"><%=user.bio%></textarea>
 
-        <button type="submit">Update</button>
-        <a href="/">Back to home</a>
-      </form>
+          <button type="submit">Update</button>
+          <a href="/">Back to home</a>
+        </form>
+      </div>
     </div>
-    
   </body>
+  <script>
+  /* Adds the update-user-form.css stylesheet to the head of the document when page loads,
+   allowing the form to be styled correctly.*/
+   /* window.onload = function() {
+      var stylesheet = document.createElement('link');
+      stylesheet.rel = 'stylesheet';
+      stylesheet.type = 'text/css';
+      stylesheet.href = '../styles/update-user-form.css';
+      document.head.appendChild(stylesheet);
+    }
+      */
+  </script>
 </html>

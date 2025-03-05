@@ -1,0 +1,68 @@
+/* User List Container (Index)*/
+.user-list-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-list-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .user-list-container li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .user-list-container li:last-child {
+    border-bottom: none;
+  }
+  
+  .user-list-container a {
+    text-decoration: none;
+    color: #4caf50;
+  }
+  
+  .user-list-container a:hover {
+    color: #3e8e41;
+  }
+
+  /*Media Queries Responsive styles */
+
+ /* Small screens (max-width: 576px) */
+@media only screen and (max-width: 576px) {
+  .user-list-container {
+    padding: 10px;
+    margin: 20px auto;
+  }
+  .user-list-container h1 {
+    font-size: 24px;
+  }
+}
+
+/* Medium screens (min-width: 577px and max-width: 768px) */
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .user-list-container {
+    padding: 20px;
+    margin: 30px auto;
+  }
+  .user-list-container h1 {
+    font-size: 30px;
+  }
+}
+
+/* Large screens (min-width: 769px) */
+@media only screen and (min-width: 769px) {
+  .user-list-container {
+    padding: 30px;
+    margin: 40px auto;
+  }
+  .user-list-container h1 {
+    font-size: 36px;
+  }
+}

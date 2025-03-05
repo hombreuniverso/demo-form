@@ -1,0 +1,92 @@
+/*searchForm css*/
+
+/* Search (User) Form */
+.search-user-form {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .search-user-form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .search-user-form input[type="text"],
+  .search-user-form input[type="email"] {
+    width: calc(100% - 40px);
+    height: 40px;
+    margin-bottom: 20px;
+    padding: 10px 10px 20px 25px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .search-user-form button[type="submit"] {
+    width: calc(100% - 5px);
+    height: 40px;
+    margin: 0 20px 20px 0px;
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  /* Media Queries Responsive styles*/
+
+  /* Small screens (max-width: 576px) */
+@media only screen and (max-width: 576px) {
+  .search-user-form {
+    padding: 10px;
+    margin: 20px auto;
+  }
+  .search-user-form label {
+    font-size: 14px;
+  }
+  .search-user-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+/* Medium screens (min-width: 577px and max-width: 768px) */
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .search-user-form {
+    padding: 20px;
+    margin: 30px auto;
+  }
+  .search-user-form label {
+    font-size: 16px;
+  }
+  .search-user-form input[type="text"] {
+    width: 80%;
+    padding: 15px;
+    font-size: 18px;
+  }
+}
+
+/* Large screens (min-width: 769px) */
+@media only screen and (min-width: 769px) {
+  .search-user-form {
+    padding: 30px;
+    margin: 40px auto;
+  }
+  .search-user-form label {
+    font-size: 18px;
+  }
+  .search-user-form input[type="text"] {
+    width: 60%;
+    padding: 20px;
+    font-size: 20px;
+  }
+}

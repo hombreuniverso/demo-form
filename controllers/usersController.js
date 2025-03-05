@@ -82,8 +82,9 @@ exports.usersCreatePost = [
 ];
 
 exports.usersUpdateGet = (req, res) => {
-  const user = usersStorage.getUser(req.params.id);
+  const user = usersStorage.getUser(req.params.id); 
   res.render("updateUserForm", { title: "Update User", user, errors: [] });
+ 
 };
 
 exports.usersUpdatePost = [

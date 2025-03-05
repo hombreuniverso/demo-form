@@ -1,0 +1,133 @@
+/*Create user form*/
+
+.create-user-form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  width: calc(100% - 40px);
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px 10px 20px 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+  width: calc(100% - 40px);
+  height: 100px;
+  margin-bottom: 20px;
+  padding: 10px 10px 20px 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+textarea:focus {
+  border-color: #aaa;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.create-user-form button[type="submit"] {
+  width: calc(100% - 5px);
+  height: 40px;
+  margin: 0 20px 20px 0px;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.create-user-form button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+.create-user-form button[type="submit"]:active {
+  background-color: #3e8e41;
+  transform: translateY(2px);
+}
+
+a {
+  text-decoration: none;
+  color: #4caf50;
+}
+
+a:hover {
+  color: #3e8e41;
+}
+
+/*Media Queries Responsive styles */
+
+/* Small screens (max-width: 576px) */
+@media only screen and (max-width: 576px) {
+  .create-user-form {
+    padding: 10px;
+    margin: 20px auto;
+  }
+  .create-user-form label {
+    font-size: 14px;
+  }
+  .create-user-form input[type="text"], .create-user-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+/* Medium screens (min-width: 577px and max-width: 768px) */
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .create-user-form {
+    padding: 20px;
+    margin: 30px auto;
+  }
+  .create-user-form label {
+    font-size: 16px;
+  }
+  .create-user-form input[type="text"], .create-user-form input[type="email"] {
+    width: 80%;
+    padding: 15px;
+    font-size: 18px;
+  }
+}
+
+/* Large screens (min-width: 769px) */
+@media only screen and (min-width: 769px) {
+  .create-user-form {
+    padding: 30px;
+    margin: 40px auto;
+  }
+  .create-user-form label {
+    font-size: 18px;
+  }
+  .create-user-form input[type="text"], .create-user-form input[type="email"] {
+    width: 60%;
+    padding: 20px;
+    font-size: 20px;
+  }
+}
